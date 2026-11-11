@@ -11,6 +11,7 @@ def get_algorithms():
     """
     from CMSRucioPolicy.algorithms import lfn2pfn, auto_approve, pfn2lfn
     from CMSRucioPolicy.algorithms.tape_colocation import CMSTapeColocation
+    from CMSRucioPolicy import profiles
     CMSTapeColocation._module_init_()
     
     return {
@@ -22,6 +23,9 @@ def get_algorithms():
         },
         'pfn2lfn': {
             'cms_pfn2lfn': pfn2lfn.cms_pfn2lfn,
+        },
+        'rse_decommisioner_profile_plugin': {
+            profiles.get_profiles()
         }
     }
 
